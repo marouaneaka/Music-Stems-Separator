@@ -1,0 +1,9 @@
+#lancer sudo apt-get install ffmpeg avant
+musdb
+soundfile
+torch
+tqdm
+ml_collections
+soundfile
+pyyaml
+stempeg # a supprimier si vous utilisez des fichiers wav

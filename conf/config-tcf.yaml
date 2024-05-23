@@ -1,0 +1,43 @@
+data_path: /home/marbel/projetML/demucs/dataset
+training:
+  batch_size: 12
+  learning_rate: 0.0001
+  ema_momentum: 0.999
+  grad_clip: 1.0
+  epochs: 3
+  num_steps : 1000
+  q: 0.5
+  coarse_loss_clip: 1.0
+  instruments:
+    - vocals
+    - other
+    - drums
+    - bass
+  target_instrument: false 
+audio:
+  chunk_size: 16384
+  min_mean_abs: 0.005
+  sample_rate: 44100
+  audio_length: 15  # in seconds
+  num_channels: 2  # stereo
+  chunk_size: 16384
+  min_mean_abs: 0.001
+  dim_f: 512
+  n_fft: 8192 
+  hop_length: 1024
+
+
+inference:
+  num_overlap: 4
+  batch_size: 6
+  dim_t: 512
+model:
+  num_subbands: 4
+  num_scales: 5
+  scale: [1, 1]
+  num_blocks_per_scale: 2
+  num_channels: 64
+  growth: 64
+  bottleneck_factor: 4
+  norm: "instance_norm"  # or "instance_norm" or "layer_norm"
+  act: "gelu"  # or "leaky_relu" or "gelu"

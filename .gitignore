@@ -1,0 +1,5 @@
+*.stem.mp4
+*.pyc
+*.wav
+*.pth
+*.ckpt
